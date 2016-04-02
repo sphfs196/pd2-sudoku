@@ -76,7 +76,7 @@ void Sudoku::solve()
 						{
 							checkSame++;
 						}
-					}
+					}					//檢查row有沒有重複
 					
 					for(int row=0;row<9;row++)
 					{
@@ -84,7 +84,7 @@ void Sudoku::solve()
 						{
 							checkSame++;
 						}
-					}
+					}					 //檢查col有沒有重複
 
 					for(int row=0;row<9;row++)
 					{
@@ -95,7 +95,7 @@ void Sudoku::solve()
 								checkSame++;
 							}
 						}
-					}
+					}					 //檢查box有沒有重複
 
 					if(checkSame!=0)
 					{
