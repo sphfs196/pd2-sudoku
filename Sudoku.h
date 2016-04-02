@@ -14,8 +14,8 @@ class Sudoku
 	void rotate(int n);
 	void flip(int n);
 	void transform();
-
-	private:
+	void printOut(bool isAnt);
+//	private:
 	int i,j,sudokuBoard[9][9],sudokuBoard2[9][9],buffer[9];
 
 };	

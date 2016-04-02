@@ -4,21 +4,21 @@
 
 using namespace std;
 
-/*int main()
+int main()
 {
 		Sudoku ss;
 		ss.readIn();
-		 put transformated functions here 
-	//	ss.rotate(80);
-	//	ss.flip(0);
-		ss.changeNum(3,4);
+		 //put transformated functions here 
+	//	ss.rotate(6);
+		ss.flip(1);
+	//	ss.changeCol(2,0);
 	//	ss.solve();
 		return 0;
-}*/
+}
 
-int main()
+/*main()
 {
 		Sudoku ss;
 		ss.giveQuestion();
 		return 0;
-}
+}*/
