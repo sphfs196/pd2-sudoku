@@ -116,7 +116,7 @@ void Sudoku::solve()
 						if(num<9)
 						{
 							num++;
-							continue;
+//							continue;
 						}
 						else if(num==9)
 						{
@@ -125,16 +125,16 @@ void Sudoku::solve()
 							{
 								if(sudokuBoard2[i][j-1]!=9)
 								{
-									sudokuBoard2[i][j-1]++;
+									num=sudokuBoard2[i][j-1]+1;
 									j=j-1;
-									continue;
+//									continue;
 								}
 								if(sudokuBoard2[i][j-1]==9)
 								{
 									sudokuBoard2[i][j-1]=0;
-									sudokuBoard2[i][j-2]++;
+									num=sudokuBoard2[i][j-2]+1;
 									j=j-2;
-									continue;
+//									continue;
 								}
 							}
 							if(j==0)
@@ -142,17 +142,17 @@ void Sudoku::solve()
 								j=8;
 								if(sudokuBoard2[i-1][j]!=9)
 								{
-									sudokuBoard2[i-1][j]++;
+									num=sudokuBoard2[i-1][j]+1;
 									i=i-1;
-									continue;
+//									continue;
 								}
 								if(sudokuBoard2[i-1][j]==9)
 								{
 									sudokuBoard2[i-1][j]=0;
-									sudokuBoard2[i-1][j-1]++;
+									num=sudokuBoard2[i-1][j-1]+1;
 									i=i-1;
 									j=j-1;
-									continue;
+//									continue;
 								}
 							}
 						}
@@ -165,7 +165,9 @@ void Sudoku::solve()
 					}
 				}//while
 			}
+//			cout<<"QAQ";
 		}
+	cout<<"QAQ ";
 	}
 
 
