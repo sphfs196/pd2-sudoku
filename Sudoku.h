@@ -23,8 +23,9 @@ class Sudoku
 	bool checkBox(int sudokuBoard2[9][9],int startRow,int startCol,int num);
 	bool safe(int sudokuBoard2[9][9],int row,int col,int num);
 	bool solveS(int sudokuBoard2[9][9]);
+	bool judge(int sudokuBoard2[9][9]);
 
 	//	private:
 	int i,j,sudokuBoard[9][9],sudokuBoard2[9][9],buffer[9],num;
-
+	int judgeB[9][9];
 };	
