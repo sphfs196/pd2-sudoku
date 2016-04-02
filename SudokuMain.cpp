@@ -11,7 +11,7 @@ int main()
 		 //put transformated functions here 
 	//	ss.rotate(6);
 //		ss.flip(1);
-	//	ss.changeCol(2,0);
+//		ss.changeCol(2,0);
 		ss.solve();
 		return 0;
 }

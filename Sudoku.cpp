@@ -32,17 +32,25 @@ void Sudoku::giveQuestion()
 
 void Sudoku::readIn()
 {
-	int i,j;
+		int i,j;
 //	int sudokuBoard2[9][9];
 	for(i=0;i<9;i++)
 	{
+//		cout<<i<<" ";
 		for(j=0;j<9;j++)
 		{
 			cin>>sudokuBoard2[i][j];
 		}
+//		cout<<i;
 	}
-	cout<<"w"<<" ";
-
+/*	for(int a=0;a<9;a++)
+	{
+		for(int b=0;b<9;b++)
+		{
+			cout<<sudokuBoard2[a][b]<<" ";
+		}
+		cout<<endl;
+	}*/
 }
 
 
@@ -133,6 +141,7 @@ bool Sudoku::solveS(int sudokuBoard2[N][N])
 
 void Sudoku::solve()
 {
+	cout<<"w"<<" ";
 	if(solveS(sudokuBoard2))
 	{
 //		cout<<"W"<<" ";
