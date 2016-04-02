@@ -1,5 +1,6 @@
 #include"Sudoku.h"
-
+#include<ctime>
+#include<cstdlib>
 void Sudoku::giveQuestion()
 {
 	int i,j;
@@ -68,34 +69,47 @@ void Sudoku::solve()
 			{
 				while(1)
 				{
-					sudokuBoard[i][j]=num;
-
+					sudokuBoard2[i][j]=num;
+					checkSame=0;
 					for(int col=0;col<9;col++)
 					{
-						if(sudokuBoard2[i][col]==num)
+						if(col!=j)
 						{
-							checkSame++;
+							if(sudokuBoard2[i][col]==num)
+							{
+								checkSame++;
+//								cout<<checkSame<<" ";
+							}
 						}
 					}					//檢查row有沒有重複
 					
+//				cout<<checkSame<<" ";
 					for(int row=0;row<9;row++)
 					{
-						if(sudokuBoard2[row][j]==num)
+						if(row!=i)
 						{
-							checkSame++;
-						}
-					}					 //檢查col有沒有重複
+							if(sudokuBoard2[row][j]==num)
+							{	
+								checkSame++;
+//								cout<<checkSame<<" ";
+							}
+						}					 //檢查col有沒有重複
+					}
 
 					for(int row=0;row<9;row++)
 					{
 						for(int col=0;col<9;col++)
 						{
-							if(sudokuBoard2[row+(i-i%3)][col+(j-j%3)]==num)
+							if(row+(i-i%3)!=i&&col+(j-j%3)!=j)
 							{
-								checkSame++;
+								if(sudokuBoard2[row+(i-i%3)][col+(j-j%3)]==num)
+								{
+									checkSame++;
+								}
 							}
 						}
 					}					 //檢查box有沒有重複
+//					cout<<checkSame<<" ";
 
 					if(checkSame!=0)
 					{
@@ -107,7 +121,7 @@ void Sudoku::solve()
 						else if(num==9)
 						{
 							sudokuBoard2[i][j]=0;
-							if(j>1)//回到上一格重填
+							if(j>0)//回到上一格重填
 							{
 								if(sudokuBoard2[i][j-1]!=9)
 								{
@@ -123,7 +137,7 @@ void Sudoku::solve()
 									continue;
 								}
 							}
-							if(j==1)
+							if(j==0)
 							{
 								j=8;
 								if(sudokuBoard2[i-1][j]!=9)
@@ -132,7 +146,7 @@ void Sudoku::solve()
 									i=i-1;
 									continue;
 								}
-								if(sugokuBoard2[i-1][j]==9)
+								if(sudokuBoard2[i-1][j]==9)
 								{
 									sudokuBoard2[i-1][j]=0;
 									sudokuBoard2[i-1][j-1]++;
@@ -152,7 +166,18 @@ void Sudoku::solve()
 				}//while
 			}
 		}
-	}	
+	}
+
+
+
+/*		for(i=0;i<9;i++)
+		{
+			for(j=0;j<9;j++)
+			{
+				cout<<sudokuBoard2[i][j];
+			}
+			cout<<endl;
+		}*/
 }
 
 void Sudoku::changeNum(int a,int b)
@@ -407,7 +432,7 @@ void Sudoku::transform()
 	rotate(rand()%101);
 	flip(rand()%2);
 
-	printOut(false)
+	printOut(false);
 }
 
 void Sudoku::printOut(bool isAns)
