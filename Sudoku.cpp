@@ -836,18 +836,22 @@ void Sudoku::flip(int n)
 	}*/
 }
 
+
+
+void Sudoku::change()
+{
+	srand(time(NULL));
+	changeNum(rand()%9+1,rand()%9+1);
+	changeRow(rand()%3,rand()%3);
+	changeCol(rand()%3,rand()%3);
+	rotate(rand()%101);
+	flip(rand()%2);
+}
+
 void Sudoku::transform()
 {
 	readIn();
-
-	srand(time(NULL));
-	changeNum(3,5);
-	changeRow(0,1);
-	changeCol(0,2);
-	rotate(5);
-	flip(1);
-
-//	printOut(false);
+	change();
 	for(int i=0;i<9;i++)
 	{
 		for(int j=0;j<9;j++)
@@ -858,28 +862,4 @@ void Sudoku::transform()
 	}
 }
 
-void Sudoku::printOut(bool isAns)
-{
-	int i;
-	if(!isAns)
-	{
-		for(i=0;i<9;i++)
-		{
-			for(j=0;j<9;j++)
-			{
-				cout<<sudokuBoard2[i][j];
-			}	
-		}
-	}
 
-	else
-	{
-		for(i=0;i<9;i++)
-		{
-			for(j=0;j<9;j++)
-			{
-				cout<<sudokuBoard2[i][j];
-			}
-		}
-	}
-}
