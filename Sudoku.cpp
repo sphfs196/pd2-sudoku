@@ -417,16 +417,6 @@ void Sudoku::solve()
 			if(check==0)
 			{
 				cout<<"1"<<endl;
-				for(int i=0;i<9;i++)
-				{
-					for(int j=0;j<9;j++)
-					{
-						cout<<judgeB[i][j]<<" ";
-					}
-					cout<<endl;
-				}
-
-
 			}
 			else if(check!=0)
 			{
@@ -436,7 +426,6 @@ void Sudoku::solve()
 		}
 		if(solveS(sudokuBoard2)==false)
 		{
-			cout<<"w ";
 			cout<<"0";
 			exit(1);
 		}
