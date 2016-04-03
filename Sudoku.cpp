@@ -602,6 +602,14 @@ void Sudoku::changeNum(int a,int b)
 			}
 		}
 	}
+
+	for(i=0;i<9;i++)
+	{
+		for(j=0;j<9;j++)
+		{
+			judgeB[i][j]=sudokuBoard2[i][j];
+		}
+	}
 }
 
 void Sudoku::changeRow(int a,int b)
@@ -654,6 +662,14 @@ void Sudoku::changeRow(int a,int b)
 			}
 		}
 	}
+
+	for(i=0;i<9;i++)
+	{
+		for(j=0;j<9;j++)
+		{
+			judgeB[i][j]=sudokuBoard2[i][j];
+		}
+	}
 }
 
 void Sudoku::changeCol(int a,int b)
@@ -701,14 +717,14 @@ void Sudoku::changeCol(int a,int b)
 		}
 	}
 
-/*	for(i=0;i<9;i++)
+
+	for(i=0;i<9;i++)
 	{
 		for(j=0;j<9;j++)
 		{
-			cout<<sudokuBoard2[i][j];
+			judgeB[i][j]=sudokuBoard2[i][j];
 		}
-		cout<<endl;
-	}*/
+	}
 
 }
 
@@ -780,7 +796,15 @@ void Sudoku::rotate(int n)
 				}
 				cout<<endl;
 				}*/
-		exit(1);
+//		exit(1);
+	}
+i
+	for(i=0;i<9;i++)
+	{
+		for(j=0;j<9;j++)
+		{
+			judgeB[i][j]=sudokuBoard2[i][j];
+		}
 	}
 }
 
@@ -815,14 +839,13 @@ void Sudoku::flip(int n)
 	}
 
 
-/*	for(i=0;i<9;i++)
+	for(i=0;i<9;i++)
 	{
 		for(j=0;j<9;j++)
 		{
-			cout<<sudokuBoard2[i][j];
+			judgeB[i][j]=sudokuBoard2[i][j];
 		}
-		cout<<endl;
-	}*/
+	}
 }
 
 
