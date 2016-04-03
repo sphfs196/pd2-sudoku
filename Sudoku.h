@@ -17,14 +17,15 @@ class Sudoku
 	void flip(int n);
 	void transform();
 	void printOut(bool isAnt);
-	bool check0(int sudokuBoard2[9][9],int &row,int &col);
+	bool checkU(int sudokuBoard2[9][9],int &row,int &col);
 	bool checkRow(int sudokuBoard2[9][9],int row,int num);
 	bool checkCol(int sudokuBoard2[9][9],int col,int num);
 	bool checkBox(int sudokuBoard2[9][9],int rowBeegin,int colBegin,int num);
 	bool safe(int sudokuBoard2[9][9],int row,int col,int num);
 	bool solveS(int sudokuBoard2[9][9]);
 	bool judge(int sudokuBoard2[9][9]);
-	bool judgeQ(int sudokuBoard2[9][9]);
+	bool judgeQ1(int sudokuBoard2[9][9]);
+	bool judgeQ2(int sudokuBoard2[9][9]);
 	bool B(int sudokuBoard2[9][9]);
 
 	//	private:

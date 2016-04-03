@@ -4,19 +4,19 @@
 
 using namespace std;
 
-/*main()
+main()
 {
-		cout<<"w!!";
+//		cout<<"w!!";
 		Sudoku ss;
 		ss.readIn();
 		 //put transformated functions here 
 	//	ss.rotate(6);
 //		ss.flip(1);
 //		ss.changeCol(2,0);
-		cout<<"w";
+//		cout<<"w";
 		ss.solve();
 		return 0;
-}*/
+}
 
 /*main()
 {
@@ -25,10 +25,9 @@ using namespace std;
 		return 0;
 }*/
 
-main()
+/*main()
 {
 		Sudoku ss;
-		ss.readIn();
-		ss.solve();
+		ss.transform();
 		return 0;
-}
+}*/
