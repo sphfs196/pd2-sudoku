@@ -17,6 +17,7 @@ class Sudoku
 	void flip(int n);
 	void transform();
 	void printOut(bool isAnt);
+	void change();
 	bool checkU(int sudokuBoard2[9][9],int &row,int &col);
 	bool checkRow(int sudokuBoard2[9][9],int row,int num);
 	bool checkCol(int sudokuBoard2[9][9],int col,int num);
