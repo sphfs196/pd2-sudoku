@@ -20,10 +20,12 @@ class Sudoku
 	bool check0(int sudokuBoard2[9][9],int &row,int &col);
 	bool checkRow(int sudokuBoard2[9][9],int row,int num);
 	bool checkCol(int sudokuBoard2[9][9],int col,int num);
-	bool checkBox(int sudokuBoard2[9][9],int startRow,int startCol,int num);
+	bool checkBox(int sudokuBoard2[9][9],int rowBeegin,int colBegin,int num);
 	bool safe(int sudokuBoard2[9][9],int row,int col,int num);
 	bool solveS(int sudokuBoard2[9][9]);
 	bool judge(int sudokuBoard2[9][9]);
+	bool judgeQ(int sudokuBoard2[9][9]);
+	bool B(int sudokuBoard2[9][9]);
 
 	//	private:
 	int i,j,sudokuBoard[9][9],sudokuBoard2[9][9],buffer[9],num;

@@ -1,8 +1,10 @@
 #include"Sudoku.h"
 #include<ctime>
 #include<cstdlib>
+#include<cstdio>
+#include<cstring>
 
-#define u 0
+#define UNASSIGNED 0
 #define N 9
 
 
@@ -53,6 +55,39 @@ void Sudoku::readIn()
 	}*/
 }
 
+/*bool check0(int sudokuBoard2[N][N], int &row, int &col);
+bool safe(int sudokuBoard2[N][N], int row, int col, int num);
+
+
+bool Sudoku::solveS(int sudokuBoard2[N][N])
+{
+	int row,col;
+//	cout<<"w"<<" ";
+	if(check0(sudokuBoard2,row,col)==false)
+	{
+		return true;
+	}
+//	else{return false;}
+
+//	cout<<"w";
+	for(int num=1;num<=9;num++)
+	{
+//		cout<<"R";
+		if(safe(sudokuBoard2,row,col,num)==true)
+		{
+			cout<<"w";
+			sudokuBoard2[row][col]=num;
+			cout<<"~";
+			if(solveS(sudokuBoard2)==true)
+			{
+				return true;
+			}
+			
+			//sudokuBoard2[row][col]=u;//
+		}
+	}
+	return false;
+}
 
 bool Sudoku::check0(int sudokuBoard2[N][N],int &row,int &col)
 {
@@ -62,17 +97,16 @@ bool Sudoku::check0(int sudokuBoard2[N][N],int &row,int &col)
 			{
 				if(sudokuBoard2[row][col]==u)
 				{	
-//					cout<<"WWW"<<" ";
+//					cout<<"W";
 					return true;
 				}	
 			}
 	}
 	return false;	
-}
+}*/
 
-bool Sudoku::checkRow(int sudokuBorad2[N][N],int row,int num)
+/*bool Sudoku::checkRow(int sudokuBorad2[N][N],int row,int num)
 {
-	
 	for(int col=0;col<N;col++)
 	{
 		if(sudokuBoard2[row][col]==num)
@@ -81,11 +115,42 @@ bool Sudoku::checkRow(int sudokuBorad2[N][N],int row,int num)
 		}
 	}
 	return false;					//檢查row有沒有重複
-}
+}*/
 
-bool Sudoku::checkCol(int sudokuBoard2[N][N],int col,int num)
+
+/*bool Sudoku::checkRow(int sudokuBoard2[N][N],int row,int num)
+{
+	for(int col=0;col<9;col++)
+		if(sudokuBoard2[row][col]==num)
+			return true;
+	return false;
+}*/
+
+/*bool Sudoku::checkRow(int sudokuBoard2[N][N], int row, int num)
+{
+	    cout<<"row";
+		for (int col = 0; col < N; col++)
+			        if (sudokuBoard2[row][col] == num)
+						            return true;
+		    return false;
+}*/
+
+/*bool Sudoku::checkCol(int sudokuBoard2[N][N],int col,int num)
 {
 	for(int row=0;row<N;row++)
+	{
+		if(sudokuBoard2[row][col]==num)
+		{
+			return true;
+		}	
+	}	
+	return false;
+}
+
+
+bool Sudoku::checkRow(int sudokuBoard2[N][N],int row,int num)
+{
+	for(int col=0;col<N;col++)
 	{
 		if(sudokuBoard2[row][col]==num)
 		{
@@ -108,38 +173,79 @@ bool Sudoku::checkBox(int sudokuBoard2[N][N],int rowBegin,int colBegin,int num)
 		}
 	}
 	return false;
-}
+}*/
 
-bool Sudoku::safe(int sudokuBoard2[N][N],int row,int col,int num)
-{
-	return !checkRow(sudokuBoard2,row,num)&&!checkCol(sudokuBoard2,col,num)&&!checkBox(sudokuBoard2,row-row%3,col-col%3,num);
-}
+//bool Sudoku::safe(int sudokuBoard2[N][N],int row,int col,int num)
+//{
+	//return true;
+	//return !checkRow(sudokuBoard2, row, num) /*&& !checkCol(sudokuBoard2, col, num) && !checkBox(sudokuBoard2, row - row%3 , col - col%3, num)*/;		   
+	
+//		return (checkRow(sudokuBoard2,row,num)==false)&&(checkCol(sudokuBoard2,col,num)==false)&&(checkBox(sudokuBoard2,row-(row%3),col-(col%3),num)==false);
+//}
 
-bool Sudoku::solveS(int sudokuBoard2[N][N])
+/*bool Sudoku::solveS(int sudokuBoard2[N][N])
 {
 	int row,col;
 //	cout<<"w"<<" ";
-	if(!check0(sudokuBoard2,row,col))
+	if(check0(sudokuBoard2,row,col)==false)
 	{
 		return true;
 	}
+//	else{return false;}
 
+//	cout<<"w";
 	for(int num=1;num<=9;num++)
 	{
-		if(safe(sudokuBoard2,row,col,num))
+//		cout<<"R";
+		if(safe(sudokuBoard2,row,col,num)==true)
 		{
+			cout<<"w";
 			sudokuBoard2[row][col]=num;
-			if(solveS(sudokuBoard2))
+			cout<<"~";
+			if(solveS(sudokuBoard2)==true)
 			{
 				return true;
 			}
+			
 			sudokuBoard2[row][col]=u;
 		}
 	}
 	return false;
-}
+}*/
 
-bool Sudoku::judge(int sudokuBoard2[N][N])
+/*bool Sudoku::judgeQ(int sudokuBoard2[N][N])
+{
+	int row,col;
+//	cout<<"w"<<" ";
+//	if(check0(sudokuBoard2,row,col)==false)
+	{
+		return true;
+	}//
+//	else{return false;}
+
+//	cout<<"w";
+	for(int num=1;num<=9;num++)
+	{
+//		cout<<"R";
+		if(safe(sudokuBoard2,row,col,num)==true)
+		{
+			return true;
+			//		cout<<"w";
+	//		sudokuBoard2[row][col]=num;
+			if(solveS(sudokuBoard2)==true)
+			{
+				return true;
+			}
+			
+			sudokuBoard2[row][col]=u;//
+		}
+	}
+	return false;
+}*/
+
+
+
+/*bool Sudoku::judge(int sudokuBoard2[N][N])
 {
 	int row,col;
 	for(int i=0;i<9;i++)
@@ -150,17 +256,17 @@ bool Sudoku::judge(int sudokuBoard2[N][N])
 		}
 	}
 //	cout<<"w"<<" ";
-	if(!check0(judgeB,row,col))
+	if(check0(judgeB,row,col)==false)
 	{
 		return true;
 	}
 
 	for(int num=9;num>=1;num--)
 	{
-		if(safe(judgeB,row,col,num))
+		if(safe(judgeB,row,col,num)==true)
 		{
 			judgeB[row][col]=num;
-			if(solveS(judgeB))
+			if(solveS(judgeB)==true)
 			{
 				return true;
 			}
@@ -168,12 +274,90 @@ bool Sudoku::judge(int sudokuBoard2[N][N])
 		}
 	}
 	return false;
+}*/
+
+/*bool Sudoku::B(int sudokuBoard2[N][N])
+{
+	return true;
+}*/
+
+bool checkU(int grid[N][N], int &row, int &col);
+bool safe(int grid[N][N], int row, int col, int num);
+ 
+bool solveS(int grid[N][N])
+{
+	    int row, col;
+		    if (!checkU(grid, row, col))
+				       return true;
+			    for (int num = 1; num <= 9; num++)
+					    {
+							        if (safe(grid, row, col, num))
+										        {
+													           	grid[row][col] = num;
+																            if (solveS(grid))
+																				                return true;
+																			            grid[row][col] = UNASSIGNED;
+																						        }
+									    }
+				    return false;
 }
+ 
+bool checkU(int grid[N][N], int &row, int &col)
+{
+	    for (row = 0; row < N; row++)
+			        for (col = 0; col < N; col++)
+						            if(grid[row][col] == UNASSIGNED)
+										                return true;
+		    return false;
+}
+ 
+bool checkRow(int grid[N][N], int row, int num)
+{
+	    for (int col = 0; col < N; col++)
+			        if (grid[row][col] == num)
+						            return true;
+		    return false;
+}
+ 
+bool checkCol(int grid[N][N], int col, int num)
+{
+	    for (int row = 0; row < N; row++)
+			        if (grid[row][col] == num)
+						            return true;
+		    return false;
+}
+ 
+bool checkBox(int grid[N][N], int rowBegin, int colBegin, int num)
+{
+	    for (int row = 0; row < 3; row++)
+			        for (int col = 0; col < 3; col++)
+						            if (grid[row+rowBegin][col+colBegin] == num)
+										                return true;
+		    return false;
+}
+ 
+
+bool safe(int grid[N][N], int row, int col, int num)
+{
+	    return !checkRow(grid, row, num) && !checkCol(grid, col, num) &&
+			           !checkBox(grid, row - row % 3 , col - col % 3, num);
+}
+ 
 
 void Sudoku::solve()
 {
-	cout<<"w"<<" ";
+/*	if(judgeQ(sudokuBoard2)==false)
+	{
+		cout<<"0";
+	}
+	else
+	{
+		cout<<"1"
+	}*/
+
+/*	cout<<"w"<<" ";
 	int check=0;
+	cout<<check;
 	if(judge(sudokuBoard2)&&solveS(sudokuBoard2))
 	{
 		for(int i=0;i<9;i++)
@@ -204,11 +388,24 @@ void Sudoku::solve()
 		{
 			cout<<"0"<<endl;
 		}
-	}
-
-	if(solveS(sudokuBoard2))
+	}*/
+	
+/*	int sudokuBoard[9][9]={
+							{0,0,4,0,0,0,0,7,0},
+							{5,0,0,0,0,6,0,0,0},
+							{0,0,0,5,0,0,0,0,3},
+							{0,3,0,0,0,0,7,0,0},
+							{0,0,0,0,6,0,0,0,0},
+							{0,0,1,0,0,0,0,2,0},
+							{2,0,0,0,0,7,0,0,0},
+							{0,0,0,2,0,0,0,0,5},
+							{0,6,0,0,0,0,2,0,0}
+  						};
+*/	
+	
+	if(solveS(sudokuBoard2)==true)
 	{
-//		cout<<"W"<<" ";
+		cout<<"W"<<" ";
 		for(int i=0;i<9;i++)
 		{
 			for(int j=0;j<9;j++)
@@ -218,6 +415,8 @@ void Sudoku::solve()
 			cout<<endl;
 		}
 	}
+
+
 }
 	
 	

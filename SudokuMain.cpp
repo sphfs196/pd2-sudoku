@@ -1,20 +1,22 @@
 #include"Sudoku.h"
-#include<string>
-#include<fstream>
+//#include<string>
+//#include<fstream>
 
 using namespace std;
 
-int main()
+/*main()
 {
+		cout<<"w!!";
 		Sudoku ss;
 		ss.readIn();
 		 //put transformated functions here 
 	//	ss.rotate(6);
 //		ss.flip(1);
 //		ss.changeCol(2,0);
+		cout<<"w";
 		ss.solve();
 		return 0;
-}
+}*/
 
 /*main()
 {
@@ -22,3 +24,11 @@ int main()
 		ss.giveQuestion();
 		return 0;
 }*/
+
+main()
+{
+		Sudoku ss;
+		ss.readIn();
+		ss.solve();
+		return 0;
+}
