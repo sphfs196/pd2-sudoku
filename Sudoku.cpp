@@ -257,7 +257,7 @@ bool Sudoku::judgeQ2(int sudokuBoard2[N][N])
 
 
 
-bool Sudoku::judge(int s[N][N])
+bool Sudoku::judge(int judgeB[N][N])
 {
 	
 /*  	for(int i=0;i<9;i++)
@@ -268,16 +268,16 @@ bool Sudoku::judge(int s[N][N])
   		}
   	}*/
 	int row, col;
-	if (!checkU(s, row, col))
+	if (!checkU(judgeB, row, col))
 		return true;
 	for (int num = 9; num >= 1; num--)
 	{
-		if (safe(s, row, col, num))
+		if (safe(judgeB, row, col, num))
 		{
-			s[row][col] = num;
-			if (solveS(s))
+			judgeB[row][col] = num;
+			if (judge(judgeB))
 				return true;
-			s[row][col] = UNASSIGNED;
+			judgeB[row][col] = UNASSIGNED;
 		}
 	}
 	return false;
@@ -417,6 +417,16 @@ void Sudoku::solve()
 			if(check==0)
 			{
 				cout<<"1"<<endl;
+				for(int i=0;i<9;i++)
+				{
+					for(int j=0;j<9;j++)
+					{
+						cout<<judgeB[i][j]<<" ";
+					}
+					cout<<endl;
+				}
+
+
 			}
 			else if(check!=0)
 			{
