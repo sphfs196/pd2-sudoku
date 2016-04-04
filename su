@@ -268,14 +268,15 @@ bool Sudoku::judge(int judgeB[9][9])
   		}
   	}*/
 	int row, col;
-	if(checkU(judgeB,row,col)==false)
+	if(!checkU(judgeB,row,col))
 		return true;
 	for(int num=9;num>=1;num--)
 	{
-		if(safe(judgeB,row,col,num)==true)
+		if(safe(judgeB,row,col,num))
 		{
 			judgeB[row][col]=num;
-			if(judge(judgeB)==true)
+
+			if(judge(judgeB))
 				return true;
 			judgeB[row][col]=0;
 		}
@@ -325,14 +326,14 @@ bool Sudoku::judge(int judgeB[9][9])
 bool Sudoku::solveS(int s[9][9])
 {
 	int row,col;
-	if(checkU(s,row,col)==false)
+	if(!checkU(s,row,col))
 		return true;
 	for(int num=1;num<=9;num++)
 	{
-		if(safe(s,row,col,num)==true)
+		if(safe(s,row,col,num))
 		{
 			s[row][col]=num;
-			if(solveS(s)==true)
+			if(solveS(s))
 				return true;
 			s[row][col]=0;
 		}
@@ -377,13 +378,13 @@ bool Sudoku::checkBox(int s[9][9],int rowBegin,int colBegin,int num)
 
 bool Sudoku::safe(int s[9][9],int row,int col,int num)
 {
-	return (checkRow(s,row,num)==false)&&(checkCol(s,col,num)==false)&&(checkBox(s,row-row%3,col-col%3,num)==false);
+	return !checkRow(s,row,num)&&!checkCol(s,col,num)&&!checkBox(s,row-row% 3,col-col%3,num);
 }
 
 
 void Sudoku::solve()
 {
-		if((judgeQ1(sudokuBoard2)==false)||(judgeQ2(sudokuBoard2)==false))
+		if(judgeQ1(sudokuBoard2)==false||judgeQ2(sudokuBoard2)==false)
 		{
 			cout<<"0";
 			exit(1);
@@ -395,7 +396,7 @@ void Sudoku::solve()
 
 		
 		int check=0;
-		if((judge(judgeB)==true)&&(solveS(sudokuBoard2)==true))
+		if(judge(judgeB)==true && solveS(sudokuBoard2)==true)
 		{
 			for(int i=0;i<9;i++)
 			{
