@@ -4,10 +4,6 @@
 #include<cstdio>
 #include<cstring>
 
-//#define UNASSIGNED 0
-//#define N 9
-
-
 void Sudoku::giveQuestion()
 {
 	int i,j;
@@ -269,14 +265,18 @@ bool Sudoku::judge(int judgeB[9][9])
   	}*/
 	int row, col;
 	if(checkU(judgeB,row,col)==false)
+	{
 		return true;
+	}
 	for(int num=9;num>=1;num--)
 	{
 		if(safe(judgeB,row,col,num)==true)
 		{
 			judgeB[row][col]=num;
 			if(judge(judgeB)==true)
+			{
 				return true;
+			}
 			judgeB[row][col]=0;
 		}
 	}
@@ -326,14 +326,18 @@ bool Sudoku::solveS(int s[9][9])
 {
 	int row,col;
 	if(checkU(s,row,col)==false)
+	{
 		return true;
+	}
 	for(int num=1;num<=9;num++)
 	{
 		if(safe(s,row,col,num)==true)
 		{
 			s[row][col]=num;
 			if(solveS(s)==true)
+			{
 				return true;
+			}
 			s[row][col]=0;
 		}
 	}
